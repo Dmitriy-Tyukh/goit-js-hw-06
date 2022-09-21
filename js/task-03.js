@@ -49,7 +49,7 @@ const gallery = document.querySelector('.gallery');
 console.log(gallery);
 
 const img = images
-    .map(image => `<li><img class="img" src = ${image.url} alt = ${image.alt} width =800></li>`)
+    .map(image => `<li><img class="img" src = ${image.url} alt = ${image.alt} width = 800></li>`)
     .join('');
 gallery.insertAdjacentHTML('afterbegin', img);
 

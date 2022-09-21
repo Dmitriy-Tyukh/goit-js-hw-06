@@ -24,7 +24,14 @@ inputEl.addEventListener('blur', onInputValid);
 function onInputValid(event) {
     event.preventDefault();
 
-    inputEl.value.length === Number(inputEl.dataset.length)
-        ? inputEl.classList.add('valid')
-        : inputEl.classList.add('invalid');
+    const corectValue = inputEl.value.length === Number(inputEl.dataset.length)
+      
+    if (corectValue) {
+        inputEl.classList.add('valid');
+        inputEl.classList.remove('invalid');
+    } else {
+        inputEl.classList.add('invalid');
+        inputEl.classList.remove('valid');
+    }
 };
+
