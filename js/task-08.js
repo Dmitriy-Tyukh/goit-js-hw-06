@@ -54,12 +54,68 @@ function onFormSubmit(event) {
     const {
         elements: { email, password },
     } = event.currentTarget;
-
+    
     const formSubmitValue = { Email: email.value, Password: password.value };
     console.log(formSubmitValue);
-
-    if (email === '' || password === '') {
-        return alert('Все поля должны быть заполнены');
+    
+    if (email.value === '' || password.value === '') {
+        alert('Все поля должны быть заполнены');
+        return;
     }
     event.currentTarget.reset();
 } 
+
+// ============================Вар-3==================================
+
+// !Решение согласно требований + стиль предупреждения - мигалка аля ZX - Specrum
+
+// const formRef = document.querySelector(".login-form");
+
+// formRef.addEventListener("submit", onFormSubmit);
+
+// function onFormSubmit(event) {
+//   event.preventDefault();
+
+//   const {
+//     elements: { email, password },
+//   } = event.currentTarget;
+
+//   if (email.value === "") {
+//     // console.log(email);
+//     email.blinkBlink();
+//     return;
+//   }
+//   if (password.value === "") {
+//     password.blinkBlink();
+//     return;
+//   }
+
+//   console.log({
+//     email: email.value,
+//     password: password.value,
+//   });
+
+//   event.currentTarget.reset();
+// }
+
+// // Функция-мигалка
+// Object.prototype.blinkBlink = function () {
+//   let counter = 3;
+
+//   const firstColor = "red";
+//   const secondColor = "white";
+
+//   //   console.log("THIS в начале функции", this);
+
+//   if (this.style.backgroundColor === secondColor) {
+//     // this.value = "Fill me";
+//     this.style.backgroundColor = firstColor;
+//     this.style.color = secondColor;
+//   } else {
+//     this.style.backgroundColor = secondColor;
+//     this.style.color = firstColor;
+//   }
+
+//   //   console.log("THIS в КОНЦЕ функции", this);
+//   setTimeout(blinkBlink.bind(this), 350);
+// };
