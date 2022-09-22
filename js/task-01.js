@@ -39,18 +39,32 @@
 
 // ====================== Вар-2 ===============================
 
-const liItemEl = document.querySelectorAll('.item');
-console.log(`Number of categories: ${liItemEl.length}`);
+// const liItemEl = document.querySelectorAll('.item');
+// console.log(`Number of categories: ${liItemEl.length}`);
 
-let ListCategoryEL = liItemEl.forEach(item => {
-    const itemTitle = item.firstElementChild.textContent;
-    const itemCategory = item.lastElementChild.children.length;
+// let ListCategoryEL = liItemEl.forEach(item => {
+//     const itemTitle = item.firstElementChild.textContent;
+//     const itemCategory = item.lastElementChild.children.length;
    
-    console.log(`Category: ${itemTitle}
-Elements: ${itemCategory}`);
+//     console.log(`Category: ${itemTitle}
+// Elements: ${itemCategory}`);
+// });
+
+// ==========================Вар-3 ==================================
+
+const list = document.querySelector('#categories');
+const items = list.querySelectorAll('.item');
+console.log(`В списке ${items.length} категории:`);
+
+items.forEach(node => {
+    const h2 = node.querySelector('h2');
+    const nodeItems = node.querySelectorAll('li');
+    console.log(
+        ` - категория: ${h2.textContent} (количество элементов: ${nodeItems.length})`
+    );
 });
 
-// ======================== Вар-3 =============================
+// ======================== Вар-4 =============================
 
 // const liItemEl = document.querySelectorAll('.item');
 // console.log(`Number of categories: ${liItemEl.length}`);
